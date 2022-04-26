@@ -1,4 +1,3 @@
-
 <?php
 
 //Apertura del archivo de texto
@@ -10,7 +9,7 @@ if ($archivo) {
 }
 
 //Impresion por pantalla
-echo "<br> ---> Procesamos el archivo<br>";
+echo "<br> --> Procesamos el archivo<br>";
 
 while (!feof($archivo)) {
     
@@ -18,7 +17,7 @@ while (!feof($archivo)) {
     echo fgets($archivo) . "<br>";
 
 }
-echo "<br> ---> fgets()imprime hasta llegar al final del archivo <br>";
+echo "<br> --> fgets()imprime hasta llegar al final del archivo <br>";
 
 // Asi leemos el archivo
 //echo "<br><br>Lectura del archivo<br>--->" . fread($archivo, filesize("archivo.txt")) . "<br><br>";
