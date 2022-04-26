@@ -51,14 +51,22 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $mail = $_POST["mail"];
         $usuario = new Usuario($nombre, $clave, $mail);
         $usuario->Guardar_CSV();
-        echo "Usuario agregado";
+        echo "<br>Usuario agregado<br>";
+        break;
+    case 'GET':
+        echo "<br>Get<br>";
         break;
     default:
-        echo 'peticion no realizada';
+        echo '<br>peticion no realizada<br>';
         break;
 }
 
+
+echo "<br>Leemos el CSV..<br><br>";
 Usuario::Leer_CSV();
+echo "<br><br>";
+
+
 /*
     Aplicación No 21 ( Listado CSV y array de usuarios).
 
