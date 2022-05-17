@@ -1,0 +1,4 @@
+[
+	{ "sabor": "Jamon", "tipo": "Molde", "precio": "10", "cantidad": "10" },
+	{ "sabor": "Peperoni", "tipo": "Molde", "precio": "10", "cantidad": "10" }
+]

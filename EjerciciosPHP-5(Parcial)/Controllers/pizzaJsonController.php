@@ -1,25 +1,27 @@
 <?php
 
-include_once 'pizza.php';
-//Controlador del JSON PIZZA
 
-
-function createPizzajson()
+/**
+ * @desc Guarda Data en Json, en el archivo pasado por parametro
+ * @param $archivo Nombre del archivo
+ * @param $data Data a guardar
+ */
+function GuardarJson($data, $archivo)
 {
-    try {
-        $archivo = fopen("pizzaJson.json", "w");
-        $myArray = array();
-        fwrite($archivo, json_encode($myArray));
-        fclose($archivo);
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+    if (file_exists($archivo)) {
+        echo "Existe <br>";
+        LeerJson($archivo);
+    } else {
+        echo "No existe <br>";
     }
 }
 
-function readPizzajson()
+function LeerJson($archivo)
 {
-    $archivo = fopen("pizzaJson.json", "r");
-    $retorno = fread($archivo, filesize("pizzaJson.json"));
-    fclose($archivo);
-    return $retorno;
+    echo "Entro a leer <br>";
+    $data = file_get_contents("pizza.json");
+    $array = json_decode($data, true);
+    print_r($array);
 }
+
+echo GuardarJson("asd", "pizza.json");

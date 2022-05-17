@@ -1,8 +1,10 @@
 <?php
 
 //Incluimos Modelo
-include 'pizzaJsonController.php';
+include 'Models/pizza.php';
+
+echo "Entramos por GET <br>";
 
 $datos = new Pizza($_GET['sabor'], $_GET['tipo'], $_GET['precio'], $_GET['cantidad']);
 
-createPizzajson();
+echo Pizza::guardarEnJson($datos);
