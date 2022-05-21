@@ -12,11 +12,4 @@
 
 include_once "Heladeria.php";
 
-echo "Mail: " . $_POST["mail"] . "<br>";
-echo "Tipo: " . $_POST["tipo"] . "<br>";
-echo "Sabor: " . $_POST["sabor"] . "<br>";
-echo "Stock: " . $_POST["stock"] . "<br>";
-
-echo "<br><br>";
-
 Heladeria::VenderHelado($_POST["mail"], $_POST["sabor"], $_POST["tipo"], $_POST["stock"]);
