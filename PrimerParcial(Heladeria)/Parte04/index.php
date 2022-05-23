@@ -1,25 +1,21 @@
 <?php
-
-//Index de la API
 //Wrapper de la API
-
-//Evaluamos el metodo
+//Validara con que metodo se esta accediendo y que debemos hacer
 switch ($_SERVER["REQUEST_METHOD"]) {
 
     case "POST":
-
         switch (key($_POST)) {
             case 'HeladeriaAlta':
-                include_once "HeladeriaAlta.php";
+                include_once "./Views/AltaHeladeria.php";
                 break;
             case 'HeladoConsultar':
-                include_once "HeladoConsultar.php";
+                include_once "./Views/ConsultarHelado.php";
                 break;
             case 'AltaVenta':
-                include_once "AltaVenta.php";
+                include_once "./Views/AltaVenta.php";
                 break;
             case 'DevolverHelado':
-                include_once "DevolverHelado.php";
+                include_once "./Views/DevolverHelado.php";
                 break;
             default:
                 echo "Peticion POST No Soportada...";
@@ -28,15 +24,15 @@ switch ($_SERVER["REQUEST_METHOD"]) {
         break;
 
     case "GET":
-        include_once "ConsultaVentas.php";
+        include_once "./Views/ConsultaVentas.php";
         break;
 
     case "PUT":
-        include_once "ModificarVenta.php";
+        include_once "./Views/ModificarVenta.php";
         break;
 
     case "DELETE":
-        include_once "BorrarVentas.php";
+        include_once "./Views/BorrarVentas.php";
         break;
 
     default:
