@@ -1,7 +1,9 @@
 <?php
-//Clase controladora de Archivos JSON.
 
 
+/**
+ * Clase controladora de Archivos JSON.
+ */
 class JsonController
 {
 

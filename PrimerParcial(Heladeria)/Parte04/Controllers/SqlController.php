@@ -1,4 +1,5 @@
 <?php
+//Controlador SLQ
 
 /**
  * clase controladora de Instancia SQL (Singleton)
@@ -24,11 +25,16 @@ class AccesoDatosSql
     {
         return $this->objetoPDO->prepare($sql);
     }
+
     public function RetornarUltimoIdInsertado()
     {
         return $this->objetoPDO->lastInsertId();
     }
 
+    /**
+     * @description: Retorna una instancia de la clase AccesoDatosSql
+     * @return AccesoDatosSql
+     */
     public static function ObtenerObjectoAccesoDatos()
     {
         if (!isset(self::$ObjetoAccesoDatos)) {
@@ -37,8 +43,9 @@ class AccesoDatosSql
         return self::$ObjetoAccesoDatos;
     }
 
-
-    // Evita que el objeto se pueda clonar
+    /**
+     * @Description: Evita que el objeto se pueda clonar
+     */
     public function __clone()
     {
         trigger_error('La clonación de este objeto no está permitida', E_USER_ERROR);

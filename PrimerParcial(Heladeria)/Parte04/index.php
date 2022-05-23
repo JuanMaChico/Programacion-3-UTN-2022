@@ -1,18 +1,13 @@
 <?php
 
-// 8- (2 pts.) AltaVenta.php, ...( continuación de 1ra parte, punto 3) Todo lo anterior más...
-// a- Debe recibir el cupón de descuento (si existe) y guardar el importe final y el descuento aplicado en el archivo.
-// b- Debe marcarse el cupón como ya usado.
-
-// 9- (2 pts.) ConsultasDevoluciones.php:-
-// a- Listar las devoluciones con cupones.
-// b- Listar solo los cupones y su estado.
-// c- Listar devoluciones y sus cupones y si fueron usados 
-
+//Index de la API
+//Wrapper de la API
 
 //Evaluamos el metodo
 switch ($_SERVER["REQUEST_METHOD"]) {
+
     case "POST":
+
         switch (key($_POST)) {
             case 'HeladeriaAlta':
                 include_once "HeladeriaAlta.php";
@@ -31,24 +26,19 @@ switch ($_SERVER["REQUEST_METHOD"]) {
                 break;
         }
         break;
+
     case "GET":
-        switch (key($_GET)) {
-            case 'ConsultasVentas':
-                echo "<br><br> Consulta ventas <br><br>";
-                include_once "ConsultaVentas.php";
-                break;
-        }
+        include_once "ConsultaVentas.php";
         break;
+
     case "PUT":
-        switch (key($_REQUEST)) {
-            case 'ModificarVenta':
-                include_once "ModificarVenta.php";
-                break;
-        }
+        include_once "ModificarVenta.php";
         break;
+
     case "DELETE":
         include_once "BorrarVentas.php";
         break;
+
     default:
         echo "Peticion No Soportada...";
         break;
